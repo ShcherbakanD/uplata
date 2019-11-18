@@ -1,0 +1,46 @@
+version: '3.4'
+services:
+  db:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=u123321
+      - POSTGRES_DB=mydb
+    ports:
+      - "5532:5432"
+    volumes:
+      - ./docker/postgres:/var/lib/postgresql/data
+      - ./var/sql:/var/www/html/sql
+    networks:
+      n1:
+        ipv4_address: 175.66.0.2
+  php:
+    tty: true
+    build: docker/php/
+    volumes:
+      - ./:/var/www/html
+      - ./docker/php/supervisor/:/etc/supervisor/
+      - ./docker/php/supervisord.conf:/etc/supervisord.conf
+    links:
+      - rabbitmq
+    networks:
+      n1:
+        ipv4_address: 175.66.0.3
+  rabbitmq:
+    image: rabbitmq:3.7.14-management
+    restart: always
+    ports:
+      - "15672:15672"
+      - "5673:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=1
+    networks:
+      n1:
+        ipv4_address: 175.66.0.4
+networks:
+  n1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 175.66.0.0/16

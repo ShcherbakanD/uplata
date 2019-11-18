@@ -1,0 +1,11 @@
+INTEGRATION: App\Integrations\ForumOdUa
+NAME: ForumOdUa
+PAGES: 1
+AUTH:
+  LOGIN: 'betterfly'
+  PASSWORD: '123321'
+URL:
+  URL_BASE: 'https://forumodua.com/'
+  URL_LOGIN: 'https://forumodua.com/login.php'
+  URL_TOPIC: 'https://forumodua.com/showthread.php'
+  URL_TOPIC_ID: '1750832'

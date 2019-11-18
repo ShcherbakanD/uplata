@@ -1,0 +1,11 @@
+[program:save_comment]
+process_name=%(program_name)s_%(process_num)02d
+directory=/var/www/html
+command=/usr/local/bin/php -d memory_limit=3072M /var/www/html/cli.php app:run-consumer save_comment
+startretries=10
+autostart=true
+autorestart=true
+user=root
+numprocs=5
+redirect_stderr=true
+stdout_logfile=/var/log/consumer_save_comment.log

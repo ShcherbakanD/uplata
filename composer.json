@@ -1,0 +1,22 @@
+{
+    "name": "uplata/forum-parser",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dmitry Shcherbakan",
+            "email": "scherbakand@gmail.com"
+        }
+    ],
+    "require": {
+        "php-amqplib/php-amqplib": "^2.10",
+        "vlucas/phpdotenv": "^3.6",
+        "php-di/php-di": "^6.0",
+        "ext-pdo": "*",
+        "guzzlehttp/guzzle": "^6.4"
+    },
+    "autoload": {
+      "psr-4": {
+        "App\\": "app/src/"
+      }
+    }
+}

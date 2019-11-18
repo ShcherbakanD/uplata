@@ -1,0 +1,11 @@
+#DOCKER
+docker/postgres/*
+docker/php/supervisor/conf.d/*
+supervisord.pid
+
+#ENVIRONMENT
+.env
+
+#GIT
+.idea/
+/vendor/
