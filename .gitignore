@@ -2,6 +2,7 @@
 docker/postgres/*
 docker/php/supervisor/conf.d/*
 supervisord.pid
+app/config/forums/forumodua.yaml.dist
 
 #ENVIRONMENT
 .env

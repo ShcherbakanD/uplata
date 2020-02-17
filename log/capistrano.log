@@ -1,0 +1,399 @@
+# Logfile created on 2020-02-05 16:08:41 +0200 by logger.rb/61378
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-05 16:08:41 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5fe02cbc] Running /usr/bin/env mkdir -p /tmp as root@175.70.0.2
+ DEBUG [5fe02cbc] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5fe02cbc] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uplata-production-user.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uplata-production-user.sh 100.0%
+  INFO [6c2efc53] Running /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh as root@175.70.0.2
+ DEBUG [6c2efc53] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh
+  INFO [6c2efc53] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [1d9e217e] Running /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD as root@175.70.0.2
+ DEBUG [1d9e217e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD )
+ DEBUG [1d9e217e] 	Warning: Permanently added 'github.com,140.82.118.4' (RSA) to the list of known hosts.
+ DEBUG [1d9e217e] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a	HEAD
+  INFO [1d9e217e] Finished in 1.807 seconds with exit status 0 (successful).
+  INFO [ab000a9d] Running /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [ab000a9d] Command: /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases
+  INFO [ab000a9d] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [0b39e0ba] Running [ -f /var/www/html/project/current/REVISION ] as root@175.70.0.2
+ DEBUG [0b39e0ba] Command: [ -f /var/www/html/project/current/REVISION ]
+ DEBUG [0b39e0ba] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [dce32df6] Running [ -f /var/www/html/project/repo/HEAD ] as root@175.70.0.2
+ DEBUG [dce32df6] Command: [ -f /var/www/html/project/repo/HEAD ]
+ DEBUG [dce32df6] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [f9087849] Running if test ! -d /var/www/html/project; then echo "Directory does not exist '/var/www/html/project'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [f9087849] Command: if test ! -d /var/www/html/project; then echo "Directory does not exist '/var/www/html/project'" 1>&2; false; fi
+ DEBUG [f9087849] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [5caf5ff9] Running /usr/bin/env git clone --mirror git@github.com:ShcherbakanD/uplata.git /var/www/html/project/repo as root@175.70.0.2
+ DEBUG [5caf5ff9] Command: cd /var/www/html/project && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git clone --mirror git@github.com:ShcherbakanD/uplata.git /var/www/html/project/repo )
+ DEBUG [5caf5ff9] 	Cloning into bare repository '/var/www/html/project/repo'...
+  INFO [5caf5ff9] Finished in 1.971 seconds with exit status 0 (successful).
+ DEBUG [a6ae6b21] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [a6ae6b21] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [a6ae6b21] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [a776b5dc] Running /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git as root@175.70.0.2
+ DEBUG [a776b5dc] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git )
+  INFO [a776b5dc] Finished in 0.011 seconds with exit status 0 (successful).
+  INFO [0e4001f4] Running /usr/bin/env git remote update --prune as root@175.70.0.2
+ DEBUG [0e4001f4] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0e4001f4] 	Fetching origin
+  INFO [0e4001f4] Finished in 1.802 seconds with exit status 0 (successful).
+ DEBUG [e039e1ae] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [e039e1ae] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [e039e1ae] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [33c6d7a4] Running /usr/bin/env mkdir -p /var/www/html/project/releases/20200205140843 as root@175.70.0.2
+ DEBUG [33c6d7a4] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env mkdir -p /var/www/html/project/releases/20200205140843 )
+  INFO [33c6d7a4] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [8bb056ff] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200205140843 as root@175.70.0.2
+ DEBUG [8bb056ff] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200205140843 )
+  INFO [8bb056ff] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [e0714d6d] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [e0714d6d] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [e0714d6d] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [1210043e] Running /usr/bin/env git rev-list --max-count=1 master as root@175.70.0.2
+ DEBUG [1210043e] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1210043e] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [1210043e] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [2634d15d] Running if test ! -d /var/www/html/project/releases/20200205140843; then echo "Directory does not exist '/var/www/html/project/releases/20200205140843'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [2634d15d] Command: if test ! -d /var/www/html/project/releases/20200205140843; then echo "Directory does not exist '/var/www/html/project/releases/20200205140843'" 1>&2; false; fi
+ DEBUG [2634d15d] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [c1527b74] Running /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION as root@175.70.0.2
+ DEBUG [c1527b74] Command: cd /var/www/html/project/releases/20200205140843 && /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION
+  INFO [c1527b74] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [84df581c] Running /usr/bin/env ln -s /var/www/html/project/releases/20200205140843 /var/www/html/project/releases/current as root@175.70.0.2
+ DEBUG [84df581c] Command: /usr/bin/env ln -s /var/www/html/project/releases/20200205140843 /var/www/html/project/releases/current
+  INFO [84df581c] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [8badb6da] Running /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project as root@175.70.0.2
+ DEBUG [8badb6da] Command: /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project
+  INFO [8badb6da] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [6d2ac87b] Running /usr/bin/env ls -x /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [6d2ac87b] Command: /usr/bin/env ls -x /var/www/html/project/releases
+ DEBUG [6d2ac87b] 	20200205140843
+ DEBUG [6d2ac87b] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [8a296d57] Running if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [8a296d57] Command: if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi
+ DEBUG [8a296d57] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [fb81901f] Running /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200205140843 by user" >> /var/www/html/project/revisions.log as root@175.70.0.2
+ DEBUG [fb81901f] Command: cd /var/www/html/project/releases && /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200205140843 by user" >> /var/www/html/project/revisions.log
+  INFO [fb81901f] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-05 16:12:47 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4b483702] Running /usr/bin/env mkdir -p /tmp as root@175.70.0.2
+ DEBUG [4b483702] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4b483702] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uplata-production-user.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uplata-production-user.sh 100.0%
+  INFO [9a2df8e1] Running /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh as root@175.70.0.2
+ DEBUG [9a2df8e1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh
+  INFO [9a2df8e1] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [655fe811] Running /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD as root@175.70.0.2
+ DEBUG [655fe811] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD )
+ DEBUG [655fe811] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a	HEAD
+  INFO [655fe811] Finished in 1.764 seconds with exit status 0 (successful).
+  INFO [cc58bdb7] Running /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [cc58bdb7] Command: /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases
+  INFO [cc58bdb7] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [4334e185] Running [ -f /var/www/html/project/current/REVISION ] as root@175.70.0.2
+ DEBUG [4334e185] Command: [ -f /var/www/html/project/current/REVISION ]
+ DEBUG [4334e185] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [96df5fc6] Running /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null as root@175.70.0.2
+ DEBUG [96df5fc6] Command: /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null
+ DEBUG [96df5fc6] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [96df5fc6] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [d4f1926e] Running [ -f /var/www/html/project/repo/HEAD ] as root@175.70.0.2
+ DEBUG [d4f1926e] Command: [ -f /var/www/html/project/repo/HEAD ]
+ DEBUG [d4f1926e] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/project/repo
+ DEBUG [fb5214ef] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [fb5214ef] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [fb5214ef] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [153c2c12] Running /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git as root@175.70.0.2
+ DEBUG [153c2c12] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git )
+  INFO [153c2c12] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [f7ac37a7] Running /usr/bin/env git remote update --prune as root@175.70.0.2
+ DEBUG [f7ac37a7] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f7ac37a7] 	Fetching origin
+ DEBUG [f7ac37a7] 	Warning: Permanently added the RSA host key for IP address '140.82.118.3' to the list of known hosts.
+  INFO [f7ac37a7] Finished in 1.820 seconds with exit status 0 (successful).
+ DEBUG [8f917c7d] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [8f917c7d] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [8f917c7d] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [6808b5c7] Running /usr/bin/env mkdir -p /var/www/html/project/releases/20200205141249 as root@175.70.0.2
+ DEBUG [6808b5c7] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env mkdir -p /var/www/html/project/releases/20200205141249 )
+  INFO [6808b5c7] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [39c75e88] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200205141249 as root@175.70.0.2
+ DEBUG [39c75e88] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200205141249 )
+  INFO [39c75e88] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [e90949f5] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [e90949f5] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [e90949f5] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [434aa2ca] Running /usr/bin/env git rev-list --max-count=1 master as root@175.70.0.2
+ DEBUG [434aa2ca] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [434aa2ca] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [434aa2ca] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [a1679ff5] Running if test ! -d /var/www/html/project/releases/20200205141249; then echo "Directory does not exist '/var/www/html/project/releases/20200205141249'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [a1679ff5] Command: if test ! -d /var/www/html/project/releases/20200205141249; then echo "Directory does not exist '/var/www/html/project/releases/20200205141249'" 1>&2; false; fi
+ DEBUG [a1679ff5] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [c1eee49f] Running /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION as root@175.70.0.2
+ DEBUG [c1eee49f] Command: cd /var/www/html/project/releases/20200205141249 && /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION
+  INFO [c1eee49f] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [d9e5164a] Running /usr/bin/env ln -s /var/www/html/project/releases/20200205141249 /var/www/html/project/releases/current as root@175.70.0.2
+ DEBUG [d9e5164a] Command: /usr/bin/env ln -s /var/www/html/project/releases/20200205141249 /var/www/html/project/releases/current
+  INFO [d9e5164a] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [caee5263] Running /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project as root@175.70.0.2
+ DEBUG [caee5263] Command: /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project
+  INFO [caee5263] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [005917d2] Running /usr/bin/env ls -x /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [005917d2] Command: /usr/bin/env ls -x /var/www/html/project/releases
+ DEBUG [005917d2] 	20200205140843	20200205141249
+ DEBUG [005917d2] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [5a4e2e69] Running if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [5a4e2e69] Command: if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi
+ DEBUG [5a4e2e69] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [293922fd] Running /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200205141249 by user" >> /var/www/html/project/revisions.log as root@175.70.0.2
+ DEBUG [293922fd] Command: cd /var/www/html/project/releases && /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200205141249 by user" >> /var/www/html/project/revisions.log
+  INFO [293922fd] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-05 16:25:03 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dcd3a319] Running /usr/bin/env mkdir -p /tmp as root@175.70.0.2
+ DEBUG [dcd3a319] Command: /usr/bin/env mkdir -p /tmp
+  INFO [dcd3a319] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uplata-production-user.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uplata-production-user.sh 100.0%
+  INFO [8dd93bc2] Running /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh as root@175.70.0.2
+ DEBUG [8dd93bc2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh
+  INFO [8dd93bc2] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [48b581bb] Running /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD as root@175.70.0.2
+ DEBUG [48b581bb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD )
+ DEBUG [48b581bb] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a	HEAD
+  INFO [48b581bb] Finished in 1.862 seconds with exit status 0 (successful).
+  INFO [958c7f3e] Running /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [958c7f3e] Command: /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases
+  INFO [958c7f3e] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [ee5054ed] Running [ -f /var/www/html/project/current/REVISION ] as root@175.70.0.2
+ DEBUG [ee5054ed] Command: [ -f /var/www/html/project/current/REVISION ]
+ DEBUG [ee5054ed] Finished in 0.002 seconds with exit status 0 (successful).
+ DEBUG [a019a996] Running /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null as root@175.70.0.2
+ DEBUG [a019a996] Command: /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null
+ DEBUG [a019a996] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [a019a996] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [d0cca71f] Running [ -f /var/www/html/project/repo/HEAD ] as root@175.70.0.2
+ DEBUG [d0cca71f] Command: [ -f /var/www/html/project/repo/HEAD ]
+ DEBUG [d0cca71f] Finished in 0.002 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/project/repo
+ DEBUG [71ed2d42] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [71ed2d42] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [71ed2d42] Finished in 0.002 seconds with exit status 0 (successful).
+  INFO [c781a294] Running /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git as root@175.70.0.2
+ DEBUG [c781a294] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git )
+  INFO [c781a294] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [ff3a0454] Running /usr/bin/env git remote update --prune as root@175.70.0.2
+ DEBUG [ff3a0454] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ff3a0454] 	Fetching origin
+  INFO [ff3a0454] Finished in 2.158 seconds with exit status 0 (successful).
+ DEBUG [b4ae36db] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [b4ae36db] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [b4ae36db] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [5a036a3b] Running /usr/bin/env mkdir -p /var/www/html/project/releases/20200205142505 as root@175.70.0.2
+ DEBUG [5a036a3b] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env mkdir -p /var/www/html/project/releases/20200205142505 )
+  INFO [5a036a3b] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [fa275adf] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200205142505 as root@175.70.0.2
+ DEBUG [fa275adf] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200205142505 )
+  INFO [fa275adf] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [18a53b9d] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [18a53b9d] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [18a53b9d] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [f733a30d] Running /usr/bin/env git rev-list --max-count=1 master as root@175.70.0.2
+ DEBUG [f733a30d] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f733a30d] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [f733a30d] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [c2a4e7c6] Running if test ! -d /var/www/html/project/releases/20200205142505; then echo "Directory does not exist '/var/www/html/project/releases/20200205142505'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [c2a4e7c6] Command: if test ! -d /var/www/html/project/releases/20200205142505; then echo "Directory does not exist '/var/www/html/project/releases/20200205142505'" 1>&2; false; fi
+ DEBUG [c2a4e7c6] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [6540df77] Running /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION as root@175.70.0.2
+ DEBUG [6540df77] Command: cd /var/www/html/project/releases/20200205142505 && /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION
+  INFO [6540df77] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [67d450a0] Running /usr/bin/env ln -s /var/www/html/project/releases/20200205142505 /var/www/html/project/releases/current as root@175.70.0.2
+ DEBUG [67d450a0] Command: /usr/bin/env ln -s /var/www/html/project/releases/20200205142505 /var/www/html/project/releases/current
+  INFO [67d450a0] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [541e087c] Running /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project as root@175.70.0.2
+ DEBUG [541e087c] Command: /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project
+  INFO [541e087c] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [f4f3c460] Running /usr/bin/env ls -x /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [f4f3c460] Command: /usr/bin/env ls -x /var/www/html/project/releases
+ DEBUG [f4f3c460] 	20200205140843	20200205141249	20200205142505
+ DEBUG [f4f3c460] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [23cafdcd] Running if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [23cafdcd] Command: if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi
+ DEBUG [23cafdcd] Finished in 0.002 seconds with exit status 0 (successful).
+  INFO [cfc03a52] Running /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200205142505 by user" >> /var/www/html/project/revisions.log as root@175.70.0.2
+ DEBUG [cfc03a52] Command: cd /var/www/html/project/releases && /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200205142505 by user" >> /var/www/html/project/revisions.log
+  INFO [cfc03a52] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-06 10:32:41 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [557fabea] Running /usr/bin/env mkdir -p /tmp as root@175.70.0.2
+ DEBUG [557fabea] Command: /usr/bin/env mkdir -p /tmp
+  INFO [557fabea] Finished in 0.147 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uplata-production-user.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uplata-production-user.sh 100.0%
+  INFO [786118cd] Running /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh as root@175.70.0.2
+ DEBUG [786118cd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh
+  INFO [786118cd] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [e7a98bbf] Running /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD as root@175.70.0.2
+ DEBUG [e7a98bbf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD )
+ DEBUG [e7a98bbf] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a	HEAD
+  INFO [e7a98bbf] Finished in 1.794 seconds with exit status 0 (successful).
+  INFO [fb4548e9] Running /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [fb4548e9] Command: /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases
+  INFO [fb4548e9] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [af5ebe32] Running [ -f /var/www/html/project/current/REVISION ] as root@175.70.0.2
+ DEBUG [af5ebe32] Command: [ -f /var/www/html/project/current/REVISION ]
+ DEBUG [af5ebe32] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [9b0206e6] Running /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null as root@175.70.0.2
+ DEBUG [9b0206e6] Command: /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null
+ DEBUG [9b0206e6] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [9b0206e6] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [0a528d7b] Running [ -f /var/www/html/project/repo/HEAD ] as root@175.70.0.2
+ DEBUG [0a528d7b] Command: [ -f /var/www/html/project/repo/HEAD ]
+ DEBUG [0a528d7b] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/project/repo
+ DEBUG [a28cdeb0] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [a28cdeb0] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [a28cdeb0] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [bfefdab3] Running /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git as root@175.70.0.2
+ DEBUG [bfefdab3] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git )
+  INFO [bfefdab3] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [f38798b3] Running /usr/bin/env git remote update --prune as root@175.70.0.2
+ DEBUG [f38798b3] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [f38798b3] 	Fetching origin
+  INFO [f38798b3] Finished in 1.825 seconds with exit status 0 (successful).
+ DEBUG [2da392f3] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [2da392f3] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [2da392f3] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [500c893a] Running /usr/bin/env mkdir -p /var/www/html/project/releases/20200206083243 as root@175.70.0.2
+ DEBUG [500c893a] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env mkdir -p /var/www/html/project/releases/20200206083243 )
+  INFO [500c893a] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [bfc89ed6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200206083243 as root@175.70.0.2
+ DEBUG [bfc89ed6] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200206083243 )
+  INFO [bfc89ed6] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [25c059fe] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [25c059fe] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [25c059fe] Finished in 0.009 seconds with exit status 0 (successful).
+ DEBUG [981f1610] Running /usr/bin/env git rev-list --max-count=1 master as root@175.70.0.2
+ DEBUG [981f1610] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [981f1610] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [981f1610] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [193a55b3] Running if test ! -d /var/www/html/project/releases/20200206083243; then echo "Directory does not exist '/var/www/html/project/releases/20200206083243'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [193a55b3] Command: if test ! -d /var/www/html/project/releases/20200206083243; then echo "Directory does not exist '/var/www/html/project/releases/20200206083243'" 1>&2; false; fi
+ DEBUG [193a55b3] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [e39c5017] Running /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION as root@175.70.0.2
+ DEBUG [e39c5017] Command: cd /var/www/html/project/releases/20200206083243 && /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION
+  INFO [e39c5017] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [4d033edf] Running /usr/bin/env ln -s /var/www/html/project/releases/20200206083243 /var/www/html/project/releases/current as root@175.70.0.2
+ DEBUG [4d033edf] Command: /usr/bin/env ln -s /var/www/html/project/releases/20200206083243 /var/www/html/project/releases/current
+  INFO [4d033edf] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [c696662d] Running /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project as root@175.70.0.2
+ DEBUG [c696662d] Command: /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project
+  INFO [c696662d] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [92ebb2f1] Running /usr/bin/env ls -x /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [92ebb2f1] Command: /usr/bin/env ls -x /var/www/html/project/releases
+ DEBUG [92ebb2f1] 	20200205140843	20200205141249	20200205142505	20200206083243
+ DEBUG [92ebb2f1] Finished in 0.014 seconds with exit status 0 (successful).
+ DEBUG [e04f4296] Running if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [e04f4296] Command: if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi
+ DEBUG [e04f4296] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [0cb9eeaa] Running /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200206083243 by user" >> /var/www/html/project/revisions.log as root@175.70.0.2
+ DEBUG [0cb9eeaa] Command: cd /var/www/html/project/releases && /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200206083243 by user" >> /var/www/html/project/revisions.log
+  INFO [0cb9eeaa] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2020-02-06 10:51:07 +0200 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b8bccbcb] Running /usr/bin/env mkdir -p /tmp as root@175.70.0.2
+ DEBUG [b8bccbcb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b8bccbcb] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-uplata-production-user.sh 0.0%
+  INFO Uploading /tmp/git-ssh-uplata-production-user.sh 100.0%
+  INFO [8075f15c] Running /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh as root@175.70.0.2
+ DEBUG [8075f15c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-uplata-production-user.sh
+  INFO [8075f15c] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [8f72da74] Running /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD as root@175.70.0.2
+ DEBUG [8f72da74] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git ls-remote git@github.com:ShcherbakanD/uplata.git HEAD )
+ DEBUG [8f72da74] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a	HEAD
+  INFO [8f72da74] Finished in 1.828 seconds with exit status 0 (successful).
+  INFO [085cfa81] Running /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [085cfa81] Command: /usr/bin/env mkdir -p /var/www/html/project/shared /var/www/html/project/releases
+  INFO [085cfa81] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [fd0a8d80] Running [ -f /var/www/html/project/current/REVISION ] as root@175.70.0.2
+ DEBUG [fd0a8d80] Command: [ -f /var/www/html/project/current/REVISION ]
+ DEBUG [fd0a8d80] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [18724a05] Running /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null as root@175.70.0.2
+ DEBUG [18724a05] Command: /usr/bin/env cat /var/www/html/project/current/REVISION 2>/dev/null
+ DEBUG [18724a05] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [18724a05] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [4f856b9b] Running [ -f /var/www/html/project/repo/HEAD ] as root@175.70.0.2
+ DEBUG [4f856b9b] Command: [ -f /var/www/html/project/repo/HEAD ]
+ DEBUG [4f856b9b] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/project/repo
+ DEBUG [68a932cc] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [68a932cc] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [68a932cc] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [33268313] Running /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git as root@175.70.0.2
+ DEBUG [33268313] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote set-url origin git@github.com:ShcherbakanD/uplata.git )
+  INFO [33268313] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [00cfced8] Running /usr/bin/env git remote update --prune as root@175.70.0.2
+ DEBUG [00cfced8] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [00cfced8] 	Fetching origin
+  INFO [00cfced8] Finished in 1.811 seconds with exit status 0 (successful).
+ DEBUG [08f7ce5e] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [08f7ce5e] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [08f7ce5e] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [bf85930e] Running /usr/bin/env mkdir -p /var/www/html/project/releases/20200206085109 as root@175.70.0.2
+ DEBUG [bf85930e] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env mkdir -p /var/www/html/project/releases/20200206085109 )
+  INFO [bf85930e] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [343a489d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200206085109 as root@175.70.0.2
+ DEBUG [343a489d] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/project/releases/20200206085109 )
+  INFO [343a489d] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [fd2d1010] Running if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [fd2d1010] Command: if test ! -d /var/www/html/project/repo; then echo "Directory does not exist '/var/www/html/project/repo'" 1>&2; false; fi
+ DEBUG [fd2d1010] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [ada8a7d3] Running /usr/bin/env git rev-list --max-count=1 master as root@175.70.0.2
+ DEBUG [ada8a7d3] Command: cd /var/www/html/project/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-uplata-production-user.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ada8a7d3] 	d4b9f4a802e0202a0d97ef0806038f473df9b54a
+ DEBUG [ada8a7d3] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [4c8bf44e] Running if test ! -d /var/www/html/project/releases/20200206085109; then echo "Directory does not exist '/var/www/html/project/releases/20200206085109'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [4c8bf44e] Command: if test ! -d /var/www/html/project/releases/20200206085109; then echo "Directory does not exist '/var/www/html/project/releases/20200206085109'" 1>&2; false; fi
+ DEBUG [4c8bf44e] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO [159c8455] Running /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION as root@175.70.0.2
+ DEBUG [159c8455] Command: cd /var/www/html/project/releases/20200206085109 && /usr/bin/env echo "d4b9f4a802e0202a0d97ef0806038f473df9b54a" > REVISION
+  INFO [159c8455] Finished in 0.012 seconds with exit status 0 (successful).
+  INFO [b9dcfb5e] Running /usr/bin/env ln -s /var/www/html/project/releases/20200206085109 /var/www/html/project/releases/current as root@175.70.0.2
+ DEBUG [b9dcfb5e] Command: /usr/bin/env ln -s /var/www/html/project/releases/20200206085109 /var/www/html/project/releases/current
+  INFO [b9dcfb5e] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [7e5bc872] Running /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project as root@175.70.0.2
+ DEBUG [7e5bc872] Command: /usr/bin/env mv /var/www/html/project/releases/current /var/www/html/project
+  INFO [7e5bc872] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [505eec10] Running /usr/bin/env ls -x /var/www/html/project/releases as root@175.70.0.2
+ DEBUG [505eec10] Command: /usr/bin/env ls -x /var/www/html/project/releases
+ DEBUG [505eec10] 	20200205140843	20200205141249	20200205142505	20200206083243	20200206085109
+ DEBUG [505eec10] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 175.70.0.2
+ DEBUG [4e016dbb] Running [ -d /var/www/html/project/current ] as root@175.70.0.2
+ DEBUG [4e016dbb] Command: [ -d /var/www/html/project/current ]
+ DEBUG [4e016dbb] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [c9ea3535] Running /usr/bin/env readlink /var/www/html/project/current as root@175.70.0.2
+ DEBUG [c9ea3535] Command: /usr/bin/env readlink /var/www/html/project/current
+ DEBUG [c9ea3535] 	/var/www/html/project/releases/20200206085109
+ DEBUG [c9ea3535] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO No old releases (keeping newest 5) on 175.70.0.2
+ DEBUG [47131d38] Running if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi as root@175.70.0.2
+ DEBUG [47131d38] Command: if test ! -d /var/www/html/project/releases; then echo "Directory does not exist '/var/www/html/project/releases'" 1>&2; false; fi
+ DEBUG [47131d38] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [cdf5ad7c] Running /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200206085109 by user" >> /var/www/html/project/revisions.log as root@175.70.0.2
+ DEBUG [cdf5ad7c] Command: cd /var/www/html/project/releases && /usr/bin/env echo "Branch master (at d4b9f4a802e0202a0d97ef0806038f473df9b54a) deployed as release 20200206085109 by user" >> /var/www/html/project/revisions.log
+  INFO [cdf5ad7c] Finished in 0.013 seconds with exit status 0 (successful).
